@@ -1,0 +1,96 @@
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+body {
+    background: url(../img/FAQ-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.accordion {
+    width: 65%;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.accordion .accordion-title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.accordion .content-container .question {
+    padding: 18px 0px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3c3c3c;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+
+    /* This will adjust the container relative to the answer as it opens and closes  */
+    position: relative;
+}
+
+.accordion .content-container .question::after {
+    content: '+';
+
+    /* Set the postion of the '+' */
+    position: absolute;
+    right: -5px;
+}
+
+.accordion .content-container .answer {
+    text-transform: none;
+    line-height: 1.5rem;
+    padding-top: 15px;
+    color: #5f5f5f;
+
+    /* This will hide the answer portion until triggered */
+    height: 0;
+    overflow: hidden;
+    /* This will make the animated reveal smooth */
+    transition: 0.5s;
+}
+
+/* JavaScript styling link */
+
+/* Show the contents of the container */
+.accordion .content-container.active .answer {
+    height: 60px;
+}
+
+/* Change the state of the question after set to 'active' */
+.accordion .content-container.active .question {
+    font-size: 1.35rem;
+    color: #c31717;
+    transition: 0.5s;
+}
+
+/* Change the '+' to a '-' */
+.accordion .content-container.active .question::after {
+    content: '-';
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
